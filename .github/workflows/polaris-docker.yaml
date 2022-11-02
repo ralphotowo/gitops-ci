@@ -5,11 +5,11 @@ on:
       - opened
       - reopened
       - synchronize
-    paths:
-      - '**.yaml'
+    # paths:
+    #   - '**.yaml'
 
 jobs:
-  polaris-scan-docker:
+  polaris-scan:
     runs-on: ubuntu-22.04
     container: ralphotowo/polaris
     steps:
