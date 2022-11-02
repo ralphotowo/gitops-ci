@@ -27,7 +27,10 @@ spec:
           runAsUser: 1000
           runAsGroup: 3000
           capabilities:
-            drop: ["NET_ADMIN", "SYS_TIME"]
+            drop:
+             - all
+            add:
+             - ["NET_ADMIN", "SYS_TIME"]
         resources:
           requests:
             memory: "64Mi"
