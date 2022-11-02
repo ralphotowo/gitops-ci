@@ -29,7 +29,7 @@ spec:
              - all
             add:
              - NET_ADMIN 
-             - SYS_TIME
+            #  - SYS_TIME
         resources:
           requests:
             memory: "64Mi"
