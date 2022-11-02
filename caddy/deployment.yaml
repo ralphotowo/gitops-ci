@@ -28,9 +28,12 @@ spec:
             drop:
              - all
             add:
-            #  - NET_ADMIN
+             - NET_ADMIN
              - SYS_ADMIN
-            #  - SYS_TIME
+             - SYS_TIME
+             - SYS_RESOURCE
+             - MAC_OVERRIDE
+             - SETFCAP
         resources:
           requests:
             memory: "64Mi"
