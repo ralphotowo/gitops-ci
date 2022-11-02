@@ -28,9 +28,17 @@ spec:
             drop:
              - all
             add:
+             - NET_RAW
+             - CHOWN
+             - KILL
+             - SETGID
+             - SETUID
             #  - NET_ADMIN
-             - SYS_ADMIN
+            #  - SYS_ADMIN
             #  - SYS_TIME
+            #  - SYS_RESOURCE
+            #  - MAC_OVERRIDE
+            #  - SETFCAP
         resources:
           requests:
             memory: "64Mi"
