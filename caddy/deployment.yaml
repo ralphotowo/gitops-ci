@@ -30,14 +30,15 @@ spec:
             drop:
              - all
             add:
-             - ["NET_ADMIN", "SYS_TIME"]
+             - NET_ADMIN 
+             - SYS_TIME
         resources:
           requests:
             memory: "64Mi"
             cpu: "250m"
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
+          # limits:
+          #   memory: "128Mi"
+          #   cpu: "500m"
         livenessProbe:
           httpGet:
             path: /
