@@ -28,7 +28,8 @@ spec:
             drop:
              - all
             add:
-             - NET_ADMIN 
+             - NET_ADMIN
+             - SYS_ADMIN
             #  - SYS_TIME
         resources:
           requests:
