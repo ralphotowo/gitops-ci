@@ -1,0 +1,26 @@
+name: Policy Check
+on: 
+  push:
+    branches:
+    - main
+env:
+  REGISTRY_URL: gcr.io
+  SERVICE_NAME: ralphotowo/gitops-ci
+  PROJECT_ID: ${{ secrets.PROJECT_ID }}
+jobs:
+  policy-check:
+    # runs-on: ubuntu-22.04
+    steps:
+    - name: Clone repository
+      uses: actions/checkout@v3
+
+    - name: Setup Polaris
+      uses: fairwindsops/polaris/.github/actions/setup-polaris@master
+      with:
+        version: 5.0.0
+
+    - name: Print version
+      run: polaris version
+
+    - name: Policy check
+      run: polaris audit --audit-path . --format=pretty --color=false --only-show-failed-tests true --set-exit-code-below-score 20
