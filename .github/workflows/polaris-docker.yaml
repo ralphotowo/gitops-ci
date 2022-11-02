@@ -1,9 +1,5 @@
 name: Policy Check
 on: 
-#   push:
-#     branches:
-#     - main
-#     - master
   pull_request:
     types:
       - opened
@@ -15,18 +11,10 @@ on:
 jobs:
   polaris-scan:
     runs-on: ubuntu-22.04
+    container: ralphotowo/polaris
     steps:
     - name: Clone repository
       uses: actions/checkout@v3
 
-    - name: Setup Polaris
-      uses: fairwindsops/polaris/.github/actions/setup-polaris@master
-      with:
-        version: 5.0.0
-
-    - name: Print version
-      run: polaris version
-
-    - name: Policy check
+    - name: Policy check      
       run: polaris audit --audit-path . --format=pretty --only-show-failed-tests true --set-exit-code-below-score 99
-# --color=false
