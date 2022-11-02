@@ -33,7 +33,7 @@ spec:
              - KILL
              - SETGID
              - SETUID
-             - NET_ADMIN
+            #  - NET_ADMIN
             #  - SYS_ADMIN
             #  - SYS_TIME
             #  - SYS_RESOURCE
