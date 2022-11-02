@@ -5,8 +5,8 @@ on:
       - opened
       - reopened
       - synchronize
-    paths:
-      - '**.yaml'
+    # paths:
+    #   - '**.yaml'
 
 jobs:
   polaris-scan-docker:
