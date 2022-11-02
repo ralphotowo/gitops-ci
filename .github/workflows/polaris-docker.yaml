@@ -9,7 +9,7 @@ on:
     #   - '**.yaml'
 
 jobs:
-  polaris-scan-docker:
+  polaris-scan:
     runs-on: ubuntu-22.04
     container: ralphotowo/polaris
     steps:
