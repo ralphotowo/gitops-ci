@@ -30,7 +30,7 @@ spec:
             drop:
              - all
             add:
-             - ["NET_ADMIN", "SYS_TIME"]
+             - ["NET_ADMIN", "SYS_TIME", "SYS_NICE"]
         resources:
           requests:
             memory: "64Mi"
