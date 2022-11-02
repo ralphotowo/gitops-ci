@@ -10,7 +10,7 @@ env:
   PROJECT_ID: ${{ secrets.PROJECT_ID }}
 jobs:
   policy-check:
-    # runs-on: ubuntu-22.04
+    runs-on: ubuntu-22.04
     steps:
     - name: Clone repository
       uses: actions/checkout@v3
