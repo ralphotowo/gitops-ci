@@ -12,10 +12,6 @@ on:
     paths:
       - '**.yaml'
 
-env:
-  REGISTRY_URL: gcr.io
-  SERVICE_NAME: ralphotowo/gitops-ci
-  PROJECT_ID: ${{ secrets.PROJECT_ID }}
 jobs:
   polaris-scan:
     runs-on: ubuntu-22.04
