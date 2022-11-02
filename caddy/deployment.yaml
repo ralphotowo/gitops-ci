@@ -27,9 +27,9 @@ spec:
           capabilities:
             drop:
              - all
-            # add:
+            add:
             #  - NET_ADMIN
-            #  - SYS_ADMIN
+             - SYS_ADMIN
             #  - SYS_TIME
         resources:
           requests:
