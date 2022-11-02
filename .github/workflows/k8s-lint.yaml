@@ -32,5 +32,5 @@ jobs:
       run: polaris version
 
     - name: Policy check
-      run: polaris audit --audit-path . --format=pretty --only-show-failed-tests true --set-exit-code-below-score 20
+      run: polaris audit --audit-path . --format=pretty --only-show-failed-tests true --set-exit-code-below-score 99
 # --color=false
