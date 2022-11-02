@@ -6,7 +6,7 @@ metadata:
     app: caddy
   name: caddy
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: caddy
@@ -20,5 +20,26 @@ spec:
       containers:
       - image: caddy:2.6
         name: caddy
-        resources: {}
-status: {}
+        imagePullPolicy: Always
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
+          runAsUser: 1000
+          runAsGroup: 3000
+          capabilities:
+            drop: ["NET_ADMIN", "SYS_TIME"]
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
