@@ -1,0 +1,20 @@
+name: Policy Check
+on: 
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+    paths:
+      - '**.yaml'
+
+jobs:
+ kubescore-scan:
+    runs-on: ubuntu-22.04
+    container: zegl/kube-score:v1.14.0
+    steps:
+    - name: Clone repository
+      uses: actions/checkout@v3
+
+    - name: Static check
+      run: score  --kubernetes-version v1.22 --output-format ci **/*.yaml
