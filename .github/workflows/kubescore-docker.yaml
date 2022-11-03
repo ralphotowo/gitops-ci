@@ -11,7 +11,7 @@ on:
 jobs:
  kubescore-scan:
     runs-on: ubuntu-22.04
-    container: zegl/kube-score:v1.14.0
+    container: ralphotowo/kube-score
     steps:
     - name: Clone repository
       uses: actions/checkout@v3
