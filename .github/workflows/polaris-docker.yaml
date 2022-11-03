@@ -17,4 +17,4 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Policy check      
-      run: polaris audit --audit-path . --format=pretty --only-show-failed-tests true --set-exit-code-below-score 99
+      run: polaris audit --audit-path . --format=pretty --only-show-failed-tests true --set-exit-code-below-score 45
